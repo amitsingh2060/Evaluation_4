@@ -1,24 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {Route, BrowserRouter} from 'react-router-dom';
+
+import Login from './component/Login';
+import Dashboard from './component/Dashboard';
+import Add from './component/Add';
+import View from './component/View';
+import Comment from './component/Comment'
+import ExtraComment from './component/ExtraComment';
+import ExtraView from './component/ExtraView';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+       <BrowserRouter>
+       
+           <Route  exact path="/" render={props => <Login {...props}/>}/>
+           <Route  path="/dashboard" render={props => <Dashboard {...props}/>}/>  
+           <Route  path="/add" render={props => <Add {...props}/>}/>   
+           <Route  path="/view" render={props => <View {...props}/>}/>  
+           <Route  path="/comment/:id" render={props => <Comment {...props}/>}/> 
+           <Route  path="/extra" render={props => <ExtraComment {...props}/>}/>
+           <Route  path="/extraview" render={props => <ExtraView {...props}/>}/>
+           
+        </BrowserRouter>
     </div>
   );
 }
