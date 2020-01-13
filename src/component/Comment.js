@@ -51,7 +51,7 @@ class Comment extends Component {
                   </div>
                </div>
            </div>
-           <ExtraComment/>
+         <ExtraComment id={this.state.id}/>
        </React.Fragment>
         );
     }

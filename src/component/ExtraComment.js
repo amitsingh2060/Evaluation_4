@@ -19,14 +19,17 @@ class ExtraComment extends Component {
         console.log(this.state);
         let randomNumber = Math.floor(Math.random(2000)*1000);
         let newComment = {
-            id: randomNumber,
+            tid: this.props.id,
+            cid: randomNumber,
             comment:this.state.comment
         }
-         this.props.addComment(newComment)
+        
+        this.props.addComment(newComment)
 
         
     }
     render() {
+        console.log('test : ', this.props.id)
         return (
             <React.Fragment>
                        <div className="container">
@@ -44,7 +47,7 @@ class ExtraComment extends Component {
                                </div>
                            </div>
                        </div>
-                       <ExtraView/>
+                       <ExtraView tid={this.props.id}/>
             </React.Fragment>
         );
     }

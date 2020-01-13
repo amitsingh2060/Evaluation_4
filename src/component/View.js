@@ -13,7 +13,7 @@ class View extends Component {
     
     render() {
         console.log(this.props.allTopic);
-        let show = this.props.allTopic.data.reverse().map( e => {
+        let show = this.props.allTopic.data.map( e => {
             return(
                 <div class="card mb-3" >
                      <div class="row no-gutters">

@@ -90,15 +90,16 @@ class ExtraView extends Component {
 
         // ***************************Pagination**************************************
         console.log(this.props.allTopic.commentData);
-        let show = slicedData.reverse().map(e=>{
+        let show = slicedData.filter((e) => {
+            return e.tid === this.props.tid
+        }).map(e=>{
             return(
                 <div class="card mb-3" >
                      <div class="row no-gutters">
                           
                             <div class="col-md-8">
                                 <div class="card-body">
-                                <h5 class="card-title"><b>{e.comment}</b></h5>
-                        
+                                <h5 class="card-title"><b>{e.comment}</b></h5>                        
                                 </div>
                             </div>
                       </div>
@@ -121,7 +122,7 @@ class ExtraView extends Component {
                    </div>  
                                  <div className="row">
                                      <div className="col-6">
-                        {/* <h1>See All Comments </h1> */}
+                        <h1>See All Comments </h1>
                         {show}
                     </div>
                 </div>
