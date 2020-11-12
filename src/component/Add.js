@@ -17,7 +17,7 @@ class Add extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        console.log(this.state);
+        
         let randomNumber = Math.floor(Math.random(2000)*1000);
        let newComment = {
            id: randomNumber,

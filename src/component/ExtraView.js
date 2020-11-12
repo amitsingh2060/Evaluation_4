@@ -95,7 +95,7 @@ class ExtraView extends Component {
           }
 
         // ***************************Pagination**************************************
-        console.log(this.props.allTopic.commentData);
+      
         let show = slicedData.filter((e) => {
             return e.tid === this.props.tid
         }).map(e=>{

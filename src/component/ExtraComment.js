@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {addComment} from '../Redux/Action'
-import {Link} from 'react-router-dom'
+
 import ExtraView from './ExtraView';
 class ExtraComment extends Component {
     constructor(props) {
@@ -16,7 +16,7 @@ class ExtraComment extends Component {
     }
     handleSubmit = (e) => {
         e.preventDefault()
-        console.log(this.state);
+       
         let randomNumber = Math.floor(Math.random(2000)*1000);
         let newComment = {
             tid: this.props.id,
@@ -29,7 +29,7 @@ class ExtraComment extends Component {
         
     }
     render() {
-        console.log('test : ', this.props.id)
+      
         return (
             <React.Fragment>
                        <div className="container">

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import { loginUser } from '../Redux/Action';
-import { Link ,Redirect} from 'react-router-dom';
+import { Redirect} from 'react-router-dom';
 
 class Login extends Component {
     constructor(props) {
@@ -15,8 +15,7 @@ class Login extends Component {
         this.setState({[e.target.name]: e.target.value})
     }
     input_submit = (e) => {
-        //e.preventDefault()
-        // console.log(this.state);
+       
         let payload = {
             username:this.state.username,
             password:this.state.password
@@ -25,7 +24,7 @@ class Login extends Component {
         
     }
     render() {
-        console.log(this.props.isAuth);
+     
         const {isAuth} = this.props
         
         return isAuth?
