@@ -16,9 +16,13 @@ class Comment extends Component {
 
     componentDidMount() {
         this.props.allTopic.data.map(e => {
+           return (
+               <div>
             if(e.id === this.props.match.params.id){
                 this.setState({topic:e.topic,id:e.id })
             }
+           )
+           </div>
         })
     }
     handleInput = (e) => {
