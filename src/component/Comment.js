@@ -21,8 +21,9 @@ class Comment extends Component {
             if(e.id === this.props.match.params.id){
                 this.setState({topic:e.topic,id:e.id })
             }
+            </div>
            )
-           </div>
+           
         })
     }
     handleInput = (e) => {
