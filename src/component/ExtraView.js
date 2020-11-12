@@ -11,6 +11,12 @@ class ExtraView extends Component {
              perPage:10
         }
     }
+
+    componentDidMount() {
+        const total =this.props.allTopic.commentData
+        this.setState({total})
+    }
+    
     
     handleDropDown = (e) => {
         e.preventDefault();
@@ -39,7 +45,7 @@ class ExtraView extends Component {
       }
 
     render() {
-        this.state.total = this.props.allTopic.commentData
+       
         var totalData = this.state.total
         var pageNo = this.state.page
         var perPageNo = this.state.perPage

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {Link} from 'react-router-dom'
+
 
 import ExtraComment from './ExtraComment';
 class Comment extends Component {
@@ -16,7 +16,7 @@ class Comment extends Component {
 
     componentDidMount() {
         this.props.allTopic.data.map(e => {
-            if(e.id == this.props.match.params.id){
+            if(e.id === this.props.match.params.id){
                 this.setState({topic:e.topic,id:e.id })
             }
         })
@@ -27,13 +27,12 @@ class Comment extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
-        console.log(this.state.comment);
+       
         
     }
     
     render() {
-       // console.log(this.props);
-       // console.log(this.props.allTopic.data);
+     
         
         return (
             <React.Fragment>
